@@ -2,7 +2,7 @@
 
 import useEmblaCarousel from 'embla-carousel-react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import man from '../../../public/man-1853510_1280.jpg'
+import man from '../../../public/man-8499961_1280.jpg'
 import couple from '../../../public/couple-6962202_1280.jpg'
 import woman from '../../../public/woman-657753_1280.jpg'
 import Image from 'next/image'
