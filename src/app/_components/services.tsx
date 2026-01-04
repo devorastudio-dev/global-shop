@@ -1,5 +1,7 @@
 "use client"
 import { LaptopIcon, DesktopTowerIcon, CpuIcon, AndroidLogoIcon, AppleLogoIcon, PrinterIcon, WifiHighIcon, DiscIcon, GraphicsCardIcon, MonitorIcon, KeyboardIcon, MouseIcon } from '@phosphor-icons/react'
+import { motion } from "motion/react"
+import { staggerContainer, fadeInUp, cardHover, fadeIn } from "@/lib/motion-types"
 
 
 export function Services () {
@@ -7,17 +9,35 @@ export function Services () {
   return (
 
     <main className='bg-gray-100 text-black border border-gray-100'>
-        <h1 className='text-4xl font-bold text-center p-4 pb-10'>
+        <motion.h1 
+          className='text-4xl font-bold text-center p-4 pb-10'
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
             Nossos Serviços
-        </h1>
+        </motion.h1>
 
 
-     <section className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-5 justify-items-center">
+     <motion.section 
+        className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-5 justify-items-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+     >
 
-        <section className='grid p-4'>
+        <motion.section 
+          className='grid p-4'
+          variants={fadeInUp}
+        >
 
             {/* COMPUTADORES */}
-            <div className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white'>
+            <motion.div 
+              className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white rounded-xl'
+              whileHover={cardHover}
+            >
                 <h1 className='text-xl text-center font-bold p-2 '>
                     Manutenção de computadores e notebooks
                 </h1>
@@ -65,15 +85,21 @@ export function Services () {
                         <CpuIcon className='w-5 h-5' />
                     </a>
                 </div>
-            </div>
+            </motion.div>
 
         
-    </section>
+    </motion.section>
 
-     <section className='grid p-4'>
+     <motion.section 
+        className='grid p-4'
+        variants={fadeInUp}
+     >
 
             {/* CELULARES */}
-            <div className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white'>
+            <motion.div 
+              className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white rounded-xl'
+              whileHover={cardHover}
+            >
                 <h1 className='text-xl text-center font-bold p-2'>
                     Manutenção de Celulares
                 </h1>
@@ -107,14 +133,20 @@ export function Services () {
                     <AppleLogoIcon className="w-5 h-5" />
                     <AndroidLogoIcon className="w-5 h-5" />
                 </div>
-            </div>
-    </section>
+            </motion.div>
+    </motion.section>
 
 
-     <section className='grid p-4 '>
+     <motion.section 
+        className='grid p-4 '
+        variants={fadeInUp}
+     >
 
                 {/* IMPRESSORAS */}
-            <div className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white'>
+            <motion.div 
+              className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white rounded-xl'
+              whileHover={cardHover}
+            >
                 <h1 className='text-xl text-center font-bold p-2'>
                     Manutenção de Impressoras
                 </h1>
@@ -148,23 +180,41 @@ export function Services () {
                     <PrinterIcon className="w-5 h-5" />
                     <WifiHighIcon className="w-5 h-5" />
                 </div>
-            </div>
+            </motion.div>
 
-    </section>
-</section>
+    </motion.section>
+</motion.section>
 
-       <h2 className="text-3xl font-bold text-center mt-20 mb-10">
+       <motion.h2 
+          className="text-3xl font-bold text-center mt-20 mb-10"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
             Soluções e Equipamentos
-        </h2>
+        </motion.h2>
 
 
-<section className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-5 mb-20 justify-items-center">
+<motion.section 
+    className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-5 mb-20 justify-items-center"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={staggerContainer}
+>
 
 
-     <section className='grid p-4'>
+     <motion.section 
+        className='grid p-4'
+        variants={fadeInUp}
+     >
 
                 {/* UPGRADES */}
-            <div className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white'>
+            <motion.div 
+              className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white rounded-xl'
+              whileHover={cardHover}
+            >
                 <h1 className='text-xl text-center font-bold p-2'>
                     Upgrades e Otimização de Desempenho
                 </h1>
@@ -197,15 +247,21 @@ export function Services () {
                     <DiscIcon className="w-5 h-5" />
                     <GraphicsCardIcon className="w-5 h-5" />
                 </div>
-            </div>
+            </motion.div>
 
-    </section>
+    </motion.section>
 
 
-     <section className='grid p-4 '>
+     <motion.section 
+        className='grid p-4 '
+        variants={fadeInUp}
+     >
 
                 {/* MONTAGEM DE COMPUTADORES */}
-            <div className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white'>
+            <motion.div 
+              className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white rounded-xl'
+              whileHover={cardHover}
+            >
                 <h1 className='text-xl text-center font-bold p-2'>
                     Montagem de Computadores
                 </h1>
@@ -236,15 +292,21 @@ export function Services () {
                         <CpuIcon className="w-5 h-5" />
                         <GraphicsCardIcon className="w-5 h-5" />
                     </div>
-            </div>
+            </motion.div>
 
-    </section>
+    </motion.section>
 
 
-     <section className='grid p-4'>
+     <motion.section 
+        className='grid p-4'
+        variants={fadeInUp}
+     >
 
             {/* VENDAS */}
-            <div className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white'>
+            <motion.div 
+              className='shadow-xl p-5 flex flex-col h-full max-w-75  md:max-w-90 lg:max-w-100 mt-15 bg-white rounded-xl'
+              whileHover={cardHover}
+            >
                 <h1 className='text-xl text-center font-bold p-2'>
                     Venda de Equipamentos
                 </h1>
@@ -276,9 +338,9 @@ export function Services () {
                     <KeyboardIcon className="w-5 h-5" />
                     <MouseIcon className="w-5 h-5" />
                 </div>
-            </div>
-        </section>
-</section>
+            </motion.div>
+        </motion.section>
+</motion.section>
 
         
     </main>
